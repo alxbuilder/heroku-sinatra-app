@@ -18,8 +18,26 @@ end
 
 # Quick test
 get '/' do
-  "Congradulations!
-   You're running a Sinatra application on Heroku!"
+# "Congradulations!
+#  You're running a Sinatra application on Heroku!"
+#  "Running #{ File.basename }"
+#  <%= File.basename %>
+#  thisfile =    <%  File.basename %>
+# if __FILE__ == $0
+#   "no error" #{ __FILE__ }
+#   puts       #{ __FILE__ }
+#   #{ __FILE__ }.respond_to? "methods"
+# end
+    line_ending="<br /> <hr />"
+    "$$ is #{ $$ } 
+     #{ line_ending }
+     __FILE__ is #{ __FILE__ }
+     #{ line_ending }
+     #{ __FILE__.methods }
+     #{ line_ending }
+    "
+#    if #{ __FILE__.respond_to? "methods" }
+#    end
 end
 
 # Test at <appname>.heroku.com
@@ -28,6 +46,6 @@ end
 # IMPORTANT! This is a very bad thing to do for a production
 # application with sensitive information
 
-# get '/env' do
-#   ENV.inspect
-# end
+  get '/env' do
+    ENV.inspect
+  end
